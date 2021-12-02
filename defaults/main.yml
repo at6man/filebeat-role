@@ -1,5 +1,5 @@
 ---
 filebeat_version: "7.14.0"
 filebeat_install_type: remote
-elasticsearch_hosts: '["http://{{ ansible_facts['default_ipv4']['address'] }}:9200"]'
+elasticsearch_hosts: "[\"http://{{ ansible_facts['default_ipv4']['address'] }}:9200\"]"
 kibana_host: "http://{{ ansible_facts['default_ipv4']['address'] }}:5601"
