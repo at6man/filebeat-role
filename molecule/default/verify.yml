@@ -1,0 +1,9 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: Check Filebeat version
+    command: /usr/share/filebeat/bin/filebeat version
+    register: filebeat_version_check
+    failed_when: filebeat_version_check.stdout is not regex("^filebeat version \d+\.\d+\.\d+")

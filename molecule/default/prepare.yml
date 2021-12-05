@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: "Install iproute2"
+      become: true
+      apt:
+        name: iproute2
+        state: present
+      register: install_iproute2
+      when: (ansible_virtualization_type == 'docker' and ansible_facts.pkg_mgr == "apt")
